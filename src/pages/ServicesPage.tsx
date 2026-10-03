@@ -2,6 +2,38 @@ import React, { useState, useEffect, useRef } from "react";
 import { BannerFX } from "../components/fx/Bannerfx";
 import { Send, CheckCircle2, Sparkles, Cpu, Settings } from "lucide-react";
 
+/** Decorative antenna radiation-pattern plot (no text, aria-hidden). */
+const ServicesHeroArt: React.FC = () => (
+  <div aria-hidden="true" className="svc-hero-art hidden sm:block">
+    <div className="svc-glass" />
+    <svg viewBox="0 0 400 400">
+      <defs>
+        <radialGradient id="svcLobe" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="rgba(90,139,245,0.05)" />
+          <stop offset="100%" stopColor="rgba(120,160,255,0.45)" />
+        </radialGradient>
+        <linearGradient id="svcSweep" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="rgba(190,210,255,0)" />
+          <stop offset="100%" stopColor="rgba(190,210,255,0.9)" />
+        </linearGradient>
+      </defs>
+      {[65, 110, 155, 195].map((r) => (
+        <circle key={r} className="svc-ring" cx="200" cy="200" r={r} />
+      ))}
+      <circle className="svc-ring-dash" cx="200" cy="200" r="178" />
+      <line className="svc-ring" x1="5" y1="200" x2="395" y2="200" />
+      <line className="svc-ring" x1="200" y1="5" x2="200" y2="395" />
+      {/* one narrow main beam + small back lobe, gently swaying like a directional antenna */}
+      <g className="svc-lobe">
+        <path d="M200 200 C 188 150 190 96 200 52 C 210 96 212 150 200 200 Z" />
+        <path className="svc-lobe-back" d="M200 200 C 193 215 194 232 200 242 C 206 232 207 215 200 200 Z" />
+      </g>
+      <g className="svc-sweep"><path d="M200 200 L 395 200 A 195 195 0 0 0 380 130 Z" fill="url(#svcSweep)" opacity="0.18" /></g>
+      <circle className="svc-core" cx="200" cy="200" r="6" />
+    </svg>
+  </div>
+);
+
 export const ServicesPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [visibleCards, setVisibleCards] = useState<Record<number, boolean>>({});
@@ -41,27 +73,33 @@ export const ServicesPage: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="pt-28 sm:pt-32 pb-24 bg-white text-slate-950 overflow-x-hidden relative"
+      className="pt-28 sm:pt-32 pb-24 bg-transparent text-slate-950 overflow-x-hidden relative"
     >
       {/* Ambient Floating Glow Orbs */}
       <div className="absolute top-20 left-10 w-[600px] h-[600px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 right-10 w-[600px] h-[600px] bg-indigo-500/10 blur-[150px] rounded-full pointer-events-none" />
 
       {/* Page Header Banner */}
-      <div className="page-banner bg-executive-gradient text-white py-20 sm:py-28 text-left relative overflow-hidden">
+      <div className="page-banner svc-hero bg-executive-gradient text-white py-20 sm:py-28 relative overflow-hidden">
         <BannerFX />
         <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-5 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/25 border border-blue-400/30 text-[11px] font-mono uppercase tracking-[0.25em] text-blue-200 font-bold backdrop-blur-md shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-blue-400 animate-pulse" />
-            Custom RF Engineering
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="svc-hero-grid">
+            <div className="space-y-5 animate-fade-in">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/25 border border-blue-400/30 text-[11px] font-mono uppercase tracking-[0.25em] text-blue-200 font-bold backdrop-blur-md shadow-sm">
+                <Sparkles className="w-3.5 h-3.5 text-blue-400 animate-pulse" />
+                Custom RF Engineering
+              </div>
+              <h1 className="text-4xl sm:text-7xl font-black tracking-tight font-sans text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] animate-text-shimmer">
+                Design Services
+              </h1>
+              <p className="text-sm sm:text-base text-blue-100/90 max-w-2xl font-medium animate-slide-up-fade">
+                From concept to chamber-tested prototype, SkyMirr delivers rapid custom antenna design and system-level RF consulting.
+              </p>
+              <span aria-hidden="true" className="svc-scroll-cue hidden sm:inline-flex"><i /></span>
+            </div>
+            <ServicesHeroArt />
           </div>
-          <h1 className="text-4xl sm:text-7xl font-black tracking-tight font-sans text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] animate-text-shimmer">
-            Design Services
-          </h1>
-          <p className="text-sm sm:text-base text-blue-100/90 max-w-2xl font-medium animate-slide-up-fade">
-            From concept to chamber-tested prototype, SkyMirr delivers rapid custom antenna design and system-level RF consulting.
-          </p>
         </div>
       </div>
 

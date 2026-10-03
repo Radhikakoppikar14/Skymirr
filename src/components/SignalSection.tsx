@@ -57,7 +57,7 @@ export const SignalSection: React.FC<SignalSectionProps> = ({ onNavigateTechnolo
   const connectB = cp > -1 ? connect.slice(cp + 1).trim() : '';
 
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-20 lg:py-28 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
         {/* PART 1: SIGNAL WITHOUT LIMITS */}
         <div className="space-y-10">

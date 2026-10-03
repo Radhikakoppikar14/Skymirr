@@ -59,3 +59,22 @@ Content, data, images and routes are untouched.
 - **Product cards:** images are bottom-anchored and enlarged so the title baked into each photo is out of view; only the live title shows.
 - **Banners (all inner pages):** new `components/fx/BannerFX.tsx` + `.page-banner` styles - mesh gradient, grid, drifting orbs, radar sweep, pinging dots, glowing edge, light gradient headline, glass eyebrow pill; banner now sits flush under the header (no white strip).
 - Not built/screenshotted here (native build binaries in node_modules are for another OS): `tsc --noEmit` passes. Run `npm install && npm run dev` and click through.
+## Round 6 - slider transition, richer backgrounds, Design Services hero
+- **Slider transition:** the sideways slide + crossfade is gone. Now a pure crossfade: the incoming slide fades in on top while the outgoing one stays put, then drops out, so there is no dark dip or jump. The image settles from 1.025x to 1x. Artwork is still always shown whole (contain + blurred fill).
+- **Home backgrounds:** hero gets a moving perspective grid floor, twinkling stars and occasional shooting signals (`HeroBackdrop`). Applications and Partners sections are now wrapped in `SectionDecor` like the others.
+- **Every page:** `SectionDecor` adds a drifting colour wash and a top hairline glow (`.fx-wash`, `.fx-hairline`).
+- **Design Services hero:** two-column banner; original eyebrow, title and sub-line (text unchanged) on the left, animated antenna radiation-pattern plot (decorative SVG, no text) on the right, plus a scroll cue. Styles: `.svc-*` in `fx.css`.
+- All new motion is disabled under `prefers-reduced-motion`; heavy extras are hidden on phones.
+- **Validation:** not built in the authoring sandbox (bundled `node_modules` is Windows-only). Run `npm install && npm run build` and check Home, Design Services and one inner page.
+
+## Round 7 - visible hero effects + body-section innovation
+- **Why effects were invisible:** the slider filled the whole hero width, so the backdrop sat hidden behind it. The slider is now a framed panel (max 1680px, side margins) with a rotating glowing border, so aurora, stars, grid floor and shooting signals show around it. Hero also got `isolate` and more top padding (the top of the artwork was hidden under the fixed header).
+- **Live effects on the artwork:** slow light sweep, scan band and three glowing sparks (all click-through).
+- **Body sections:** Signal and Partners sections made transparent so the page wash shows. Stronger dotted grid and colour wash; drifting signal-wave lines at the bottom of each section; dashed orbit ring with a moving dot; a light pulse that travels along each section divider.
+- **Cards on every page:** animated gradient ring on hover, image saturation lift. Targets `main div.group[class*="rounded"]`.
+- Reduced motion turns all of it off; orbit and scan hidden on phones.
+- Not built or browser-tested here. Run `npm install && npm run build`.
+
+## Round 8 - dots no longer drawn over content
+- The dotted grid / wash / waves layer in `SectionDecor` was painted ABOVE page content (z-5), so dots showed on top of cards, diagrams and images. It now sits BEHIND (z-0) and the content is wrapped in `relative z-[1]`.
+- Plain `bg-white` page roots (About, Contact, Press, Products, Services, Team, Technology, The Latest) made transparent so the decor still shows behind them.

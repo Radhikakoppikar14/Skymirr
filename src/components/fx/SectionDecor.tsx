@@ -14,8 +14,15 @@ interface Props {
  */
 export const SectionDecor: React.FC<Props> = ({ children, side = "right", className = "" }) => (
   <div className={`relative isolate overflow-hidden ${className}`}>
-    {children}
-    <div aria-hidden="true" className="absolute inset-0 z-[5] pointer-events-none overflow-hidden">
+    {/* decor sits BEHIND the content so it can never dot or tint text, cards or images */}
+    <div aria-hidden="true" className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      <div className="fx-wash" />
+      <svg className="fx-waves" viewBox="0 0 1440 220" preserveAspectRatio="none">
+        <path className="fx-wave fx-wave-a" d="M0 120 C 120 60 240 60 360 120 S 600 180 720 120 S 960 60 1080 120 S 1320 180 1440 120 S 1680 60 1800 120 S 2040 180 2160 120" />
+        <path className="fx-wave fx-wave-b" d="M0 140 C 120 190 240 190 360 140 S 600 90 720 140 S 960 190 1080 140 S 1320 90 1440 140 S 1680 190 1800 140 S 2040 90 2160 140" />
+      </svg>
+      <span className="fx-orbit" />
+      <div className="fx-hairline" />
       <div className="fx-dots absolute inset-0" />
       <div className="fx-streak" />
       <span
@@ -34,5 +41,6 @@ export const SectionDecor: React.FC<Props> = ({ children, side = "right", classN
         <FloatChip shape="square" size={14} delay={2.8} className="absolute top-1/2 right-[3%] !border-blue-300/70 !bg-blue-200/30" />
       </div>
     </div>
+    <div className="relative z-[1]">{children}</div>
   </div>
 );

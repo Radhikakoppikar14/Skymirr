@@ -58,7 +58,7 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({
   return (
     <div className="space-y-16">
       {/* OUR PARTNERS */}
-      <section className="py-24 sm:py-32 bg-white border-t border-slate-200/70 relative">
+      <section className="py-24 sm:py-32 bg-transparent border-t border-slate-200/70 relative">
         <div className="absolute top-10 left-10 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-3">

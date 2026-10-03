@@ -72,7 +72,7 @@ export const Hero: React.FC<HeroProps> = ({
   };
 
   return (
-    <section className="no-reveal relative pt-[72px] lg:pt-[72px] pb-0 overflow-hidden bg-[#0d1830]">
+    <section className="no-reveal relative isolate pt-[104px] sm:pt-[116px] pb-0 overflow-hidden bg-[#0d1830]">
       <HeroBackdrop />
 
       {/* HERO SLIDER */}
@@ -80,10 +80,11 @@ export const Hero: React.FC<HeroProps> = ({
         {/* soft light under the frame */}
         <div aria-hidden="true" className="fx-slider-glow" />
 
-        {/* gradient hairline frame */}
-        <div className="p-0">
+        {/* framed slider: backdrop effects stay visible around it */}
+        <div className="fx-frame-wrap max-w-[1680px] mx-auto px-3 sm:px-6 lg:px-10">
+          <div className="fx-frame">
           <div
-            className="fx-slider group no-lift relative overflow-hidden rounded-none bg-[#0b2350]"
+            className="fx-slider group no-lift relative overflow-hidden rounded-[inherit] bg-[#0b2350]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -110,9 +111,15 @@ export const Hero: React.FC<HeroProps> = ({
                   </div>
                 );
               })}
-              {/* glass sheen on top of the artwork */}
+              {/* glass sheen + live light effects on top of the artwork */}
               <div aria-hidden="true" className="fx-slider-sheen" />
+              <div aria-hidden="true" className="fx-slider-sweep" />
+              <div aria-hidden="true" className="fx-slider-scan" />
+              <span aria-hidden="true" className="fx-slider-spark" style={{ left: "18%", top: "30%" }} />
+              <span aria-hidden="true" className="fx-slider-spark" style={{ left: "58%", top: "22%", animationDelay: "1.3s" }} />
+              <span aria-hidden="true" className="fx-slider-spark" style={{ left: "86%", top: "60%", animationDelay: "2.4s" }} />
             </div>
+          </div>
           </div>
         </div>
 

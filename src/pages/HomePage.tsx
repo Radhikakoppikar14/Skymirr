@@ -42,11 +42,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       <section id="home-applications" data-rail="Applications" className="px-band px-band-alt">
-        <SolutionsSection onSelectApplication={() => onNavigate('services')} />
+        <SectionDecor side="right">
+          <SolutionsSection onSelectApplication={() => onNavigate('services')} />
+        </SectionDecor>
       </section>
 
       <section id="home-partners" data-rail="Partners" className="px-band">
-        <PartnersSection onExploreProducts={() => onNavigate('products')} />
+        <SectionDecor side="left">
+          <PartnersSection onExploreProducts={() => onNavigate('products')} />
+        </SectionDecor>
       </section>
     </div>
   );

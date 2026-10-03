@@ -145,7 +145,7 @@ export const TheLatestPage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-white pb-20 pt-[72px] text-slate-950">
+    <div className="min-h-screen bg-transparent pb-20 pt-[72px] text-slate-950">
       <header className="page-banner bg-executive-gradient relative overflow-hidden px-4 py-14 text-white sm:py-16">
         <BannerFX />
         <div className="pointer-events-none absolute inset-0 opacity-[0.07] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]" />

@@ -246,7 +246,7 @@ export const TeamPage: React.FC = () => {
   let cardIndex = 0;
 
   return (
-    <div ref={containerRef} className="pt-28 sm:pt-32 pb-24 bg-white text-slate-950 overflow-x-hidden relative">
+    <div ref={containerRef} className="pt-28 sm:pt-32 pb-24 bg-transparent text-slate-950 overflow-x-hidden relative">
       
       {/* Ambient Floating Glow Orbs */}
       <div className="absolute top-20 left-10 w-[600px] h-[600px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none" />

@@ -43,16 +43,16 @@ export const BlogsPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-[72px] pb-24 bg-gradient-to-br from-[#fdfbf7] via-amber-50/30 to-blue-50/20 text-slate-900 relative overflow-hidden">
+    <div className="pt-[72px] pb-24 bg-white text-slate-900 relative overflow-hidden">
       {/* Background Floating Gradient Orbs */}
       <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-amber-200/30 blur-[130px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-blue-300/20 blur-[130px] rounded-full pointer-events-none" />
 
       {/* Page Header Banner */}
-      <div className="page-banner bg-executive-gradient text-white py-20 sm:py-28 text-center relative overflow-hidden shadow-xl">
+      <div className="page-banner bg-executive-gradient text-white py-20 sm:py-28 text-left relative overflow-hidden">
         <BannerFX />
         <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-4 relative z-10 space-y-4 animate-fade-in">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-5 animate-fade-in">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/25 border border-blue-400/40 text-[11px] font-mono uppercase tracking-[0.25em] text-blue-200 font-bold backdrop-blur-md shadow-[0_0_15px_rgba(37,99,235,0.3)]">
             <Sparkles className="w-3.5 h-3.5 text-blue-400 animate-pulse" />
             Insights &amp; Innovation
@@ -60,7 +60,7 @@ export const BlogsPage: React.FC = () => {
           <h1 className="text-4xl sm:text-7xl font-black tracking-tight font-sans text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] animate-text-shimmer">
             Blogs
           </h1>
-          <p className="text-sm sm:text-base text-blue-100/90 max-w-xl mx-auto font-medium animate-slide-up-fade">
+          <p className="text-sm sm:text-base text-blue-100/90 max-w-2xl font-medium animate-slide-up-fade">
             Technical papers, antenna-first engineering insights, and RF
             industry breakthroughs from the SkyMirr team.
           </p>
@@ -72,7 +72,7 @@ export const BlogsPage: React.FC = () => {
         {posts.map((post) => (
           <div
             key={post.id}
-            className="bg-white rounded-3xl p-6 sm:p-8 border border-amber-900/10 shadow-lg hover:shadow-2xl hover:border-blue-400 transition-all duration-300 flex flex-col justify-between group aspect-square"
+            className="bg-white rounded-3xl p-6 sm:p-8 border border-amber-900/10 shadow-lg hover:shadow-2xl hover:border-blue-400 transition-all duration-300 flex flex-col justify-between group"
           >
             {/* Post Thumbnail Frame */}
             <div className="w-full h-40 sm:h-44 rounded-2xl overflow-hidden bg-slate-100 shrink-0 border border-slate-200/85 relative shadow-inner">

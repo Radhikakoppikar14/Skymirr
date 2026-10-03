@@ -3,11 +3,11 @@ import { CheckCircle2, ArrowRight } from 'lucide-react';
 
 export const CustomerSuccessSection: React.FC<{ onExploreRouter?: () => void }> = ({ onExploreRouter }) => {
   const outcomes = [
-    'Stores opened on schedule[cite: 2]',
-    'Continuous POS operations[cite: 2]',
-    'Real-time inventory synchronization[cite: 2]',
-    'Reduced deployment costs[cite: 2]',
-    'Smooth transition to future failover connectivity[cite: 2]',
+    'Stores opened on schedule',
+    'Continuous POS operations',
+    'Real-time inventory synchronization',
+    'Reduced deployment costs',
+    'Smooth transition to future failover connectivity',
   ];
 
   return (
@@ -15,12 +15,12 @@ export const CustomerSuccessSection: React.FC<{ onExploreRouter?: () => void }> 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-2xl mx-auto text-center mb-14">
-          <p className="text-sm font-medium text-blue-600 mb-3">Real-World Impact[cite: 2]</p>
+          <p className="text-sm font-medium text-blue-600 mb-3">Real-World Impact</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900">
-            Customer Success Scenario[cite: 2]
+            Customer Success Scenario
           </h2>
           <p className="mt-4 text-base text-slate-500 leading-relaxed">
-            How enterprise retailers and critical infrastructure overcome connectivity delays with SkyMirr[cite: 2]
+            How enterprise retailers and critical infrastructure overcome connectivity delays with SkyMirr
           </p>
         </div>
 
@@ -29,9 +29,9 @@ export const CustomerSuccessSection: React.FC<{ onExploreRouter?: () => void }> 
           <div className="p-6 sm:p-12 space-y-10">
             {/* Case Title */}
             <div className="pb-8 border-b border-slate-100">
-              <p className="text-sm font-medium text-slate-400 mb-2">Case Study · Enterprise Retail[cite: 2]</p>
+              <p className="text-sm font-medium text-slate-400 mb-2">Case Study · Enterprise Retail</p>
               <h3 className="text-2xl sm:text-3xl font-semibold text-slate-900 tracking-tight">
-                Retail Expansion Without Connectivity Delays[cite: 2]
+                Retail Expansion Without Connectivity Delays
               </h3>
             </div>
 
@@ -40,27 +40,27 @@ export const CustomerSuccessSection: React.FC<{ onExploreRouter?: () => void }> 
               <div className="space-y-3 bg-canvas rounded-2xl p-6 border border-slate-200/70">
                 <h4 className="text-sm font-semibold text-slate-900 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-rose-500" />
-                  The Challenge[cite: 2]
+                  The Challenge
                 </h4>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  A national retailer was opening ten new locations. Fiber installation delays threatened store launches, POS deployment, inventory synchronization, and staff onboarding[cite: 2].
+                  A national retailer was opening ten new locations. Fiber installation delays threatened store launches, POS deployment, inventory synchronization, and staff onboarding.
                 </p>
               </div>
 
               <div className="space-y-3 bg-blue-50 rounded-2xl p-6 border border-blue-100">
                 <h4 className="text-sm font-semibold text-blue-900 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-blue-600" />
-                  The SkyMirr Solution[cite: 2]
+                  The SkyMirr Solution
                 </h4>
                 <p className="text-sm text-slate-700 leading-relaxed">
-                  The retailer implemented <strong className="text-blue-950 font-semibold">Sky5G Routers</strong> as primary broadband gateways[cite: 2]. Mesh Networking extended coverage across sales floors and warehouses, while <strong className="text-blue-950 font-semibold">MuLCAT® technology</strong> maintained stable connectivity during periods of heavy network usage[cite: 2].
+                  The retailer implemented <strong className="text-blue-950 font-semibold">Sky5G Routers</strong> as primary broadband gateways. Mesh Networking extended coverage across sales floors and warehouses, while <strong className="text-blue-950 font-semibold">MuLCAT® technology</strong> maintained stable connectivity during periods of heavy network usage.
                 </p>
               </div>
             </div>
 
             {/* Business Outcomes */}
             <div className="space-y-4">
-              <h4 className="text-sm font-semibold text-slate-900">Business Outcomes[cite: 2]</h4>
+              <h4 className="text-sm font-semibold text-slate-900">Business Outcomes</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {outcomes.map((item, idx) => (
                   <div
@@ -77,7 +77,7 @@ export const CustomerSuccessSection: React.FC<{ onExploreRouter?: () => void }> 
             {/* Footer Action */}
             <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
               <span className="text-sm text-slate-500">
-                Hardware: Sky5G® Wireless Router (TCPA 117)[cite: 2]
+                Hardware: Sky5G® Wireless Router (TCPA 117)
               </span>
 
               {onExploreRouter && (
@@ -85,7 +85,7 @@ export const CustomerSuccessSection: React.FC<{ onExploreRouter?: () => void }> 
                   onClick={onExploreRouter}
                   className="group inline-flex items-center gap-2 h-11 px-6 rounded-lg text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors cursor-pointer"
                 >
-                  <span>Explore Sky5G Technical Specifications[cite: 2]</span>
+                  <span>Explore Sky5G Technical Specifications</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               )}

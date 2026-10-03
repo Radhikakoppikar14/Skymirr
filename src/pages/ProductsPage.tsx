@@ -67,10 +67,10 @@ export function ProductsPage({
   };
 
   return (
-    <div className="pt-28 sm:pt-36 pb-28 bg-[#f4f7fb] text-slate-900 min-h-screen relative overflow-hidden font-sans">
+    <div className="pt-28 sm:pt-36 pb-28 bg-white text-slate-900 min-h-screen relative overflow-hidden font-sans">
       <div className="absolute top-20 left-1/3 w-[500px] h-[500px] bg-sky-200/30 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12 pm-pagehead">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-slate-200">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-xs font-mono uppercase tracking-[0.25em] text-sky-800 font-bold">

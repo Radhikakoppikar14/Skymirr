@@ -272,7 +272,7 @@ export default function ProductDetailPage({ productId }: { productId?: string })
 
   return (
     <main className="min-h-screen bg-[#fdfbf7] pb-24 text-slate-900">
-      <section className="bg-gradient-to-b from-amber-50/40 to-[#fdfbf7] pb-10 pt-28 sm:pt-36">
+      <section className="bg-[#f3f7fd] pb-10 pt-28 sm:pt-36">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 sm:px-6 md:grid-cols-[1.2fr_1fr] lg:px-8">
           <div className="space-y-5">
             <nav className="flex flex-wrap items-center gap-2 text-xs text-slate-500" aria-label="Breadcrumb">

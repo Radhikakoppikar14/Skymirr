@@ -28,17 +28,17 @@ export const TechnologyPage: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="pt-28 sm:pt-32 pb-24 bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-50/10 text-slate-950 overflow-x-hidden relative"
+      className="pt-28 sm:pt-32 pb-24 bg-white text-slate-950 overflow-x-hidden relative"
     >
       {/* Ambient Floating Gradient Orbs */}
       <div className="absolute top-20 left-10 w-[600px] h-[600px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 right-10 w-[600px] h-[600px] bg-indigo-500/10 blur-[150px] rounded-full pointer-events-none" />
 
       {/* Executive Dark Header Banner */}
-      <div className="page-banner bg-executive-gradient text-white py-20 sm:py-28 text-center relative overflow-hidden shadow-xl">
+      <div className="page-banner bg-executive-gradient text-white py-20 sm:py-28 text-left relative overflow-hidden">
         <BannerFX />
         <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-4 relative z-10 space-y-4 animate-fade-in">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-5 animate-fade-in">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/25 border border-blue-400/40 text-[11px] font-mono uppercase tracking-[0.25em] text-blue-200 font-bold backdrop-blur-md shadow-[0_0_15px_rgba(37,99,235,0.3)]">
             <Sparkles className="w-3.5 h-3.5 text-blue-400 animate-pulse" />
             RF Core Innovation
@@ -46,7 +46,7 @@ export const TechnologyPage: React.FC = () => {
           <h1 className="text-4xl sm:text-7xl font-black tracking-tight font-sans text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] animate-text-shimmer">
             Technology
           </h1>
-          <p className="text-sm sm:text-base text-blue-100/90 max-w-xl mx-auto font-medium animate-slide-up-fade">
+          <p className="text-sm sm:text-base text-blue-100/90 max-w-2xl font-medium animate-slide-up-fade">
             MuLCAT™: Multi-Layer Coupling Controlled Antenna Technology (Patents Pending)
           </p>
         </div>

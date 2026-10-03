@@ -56,21 +56,21 @@ export const SolutionsSection: React.FC<SolutionsSectionProps> = ({
   return (
     <section
       id="applications"
-      className="py-20 sm:py-28 bg-canvas border-t border-slate-200/70"
+      className="py-24 sm:py-32 bg-canvas border-t border-slate-200/70"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Centered, widely spaced heading */}
-        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
+        <div className="max-w-none text-left mb-10 sm:mb-12">
           <p className="font-mono text-[11px] font-medium text-blue-600 mb-4">
             Field Implementations
           </p>
           <h2
             className="font-display text-3xl sm:text-4xl lg:text-5xl uppercase"
-            style={{ letterSpacing: "0.38em", color: "#172f73", paddingLeft: "0.38em" }}
+            style={{ letterSpacing: "-0.03em", color: "#0b1631" }}
           >
             Applications
           </h2>
-          <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed">
+          <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed max-w-2xl">
             Turnkey connectivity deployed across residential, supply chain,
             educational, and industrial infrastructures
           </p>
@@ -97,7 +97,7 @@ export const SolutionsSection: React.FC<SolutionsSectionProps> = ({
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-950/20 to-transparent pointer-events-none" />
                 <div className="absolute inset-0 flex items-center justify-center px-4">

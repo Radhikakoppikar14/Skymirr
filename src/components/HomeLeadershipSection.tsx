@@ -41,7 +41,7 @@ export const HomeLeadershipSection: React.FC<HomeLeadershipSectionProps> = ({ on
   const displayedMembers = showAll ? LEADERSHIP_TEAM : LEADERSHIP_TEAM.slice(0, 6);
 
   return (
-    <section className="py-20 sm:py-24 bg-gradient-to-b from-white via-slate-50/40 to-sky-50/20 border-t border-slate-200/80 relative overflow-hidden">
+    <section className="py-24 sm:py-32 bg-[#f3f7fd] border-t border-slate-200/80 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         <div className="text-center space-y-2">
           <span className="text-[11px] font-mono uppercase tracking-widest text-blue-700 font-bold bg-blue-50 px-3.5 py-1 rounded-full">

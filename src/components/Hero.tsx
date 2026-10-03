@@ -76,14 +76,14 @@ export const Hero: React.FC<HeroProps> = ({
       <HeroBackdrop />
 
       {/* HERO SLIDER */}
-      <div className="fx-hero-media relative mt-6 mx-4 sm:mx-6 lg:mx-auto lg:max-w-7xl">
+      <div className="fx-hero-media relative mt-0 mx-0">
         {/* soft light under the frame */}
         <div aria-hidden="true" className="fx-slider-glow" />
 
         {/* gradient hairline frame */}
-        <div className="rounded-[26px] p-[1.5px] bg-gradient-to-br from-white/35 via-blue-400/25 to-indigo-400/35 shadow-[0_40px_90px_-35px_rgba(37,99,235,0.55)]">
+        <div className="p-0">
           <div
-            className="fx-slider group no-lift relative overflow-hidden rounded-3xl bg-[#0b2350]"
+            className="fx-slider group no-lift relative overflow-hidden rounded-none bg-[#0b2350]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -117,7 +117,7 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
 
         {/* Controls sit BELOW the image so they never cover the artwork */}
-        <div className="mt-4 flex items-center justify-center gap-3">
+        <div className="py-5 flex items-center justify-center gap-3">
           <button
             onClick={prevSlide}
             className="fx-slider-btn"

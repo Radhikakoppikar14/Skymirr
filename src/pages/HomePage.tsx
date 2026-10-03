@@ -10,43 +10,44 @@ interface HomePageProps {
   onNavigate: (route: string) => void;
 }
 
+/* Premium structure: every block is a banded, anchored section (id + data-rail)
+   so the side rail can track it and alternating tints give the page rhythm. */
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   return (
     <div className="animate-fade-in bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-50/10 text-slate-950 overflow-x-hidden">
-      {/* Hero Slider & Latest @ SkyMirr Ticker */}
-      <Hero
-        onExploreProducts={() => onNavigate('products')}
-        onExploreTechnology={() => onNavigate('technology')}
-        onNavigateDetail={(detail) => onNavigate(detail)}
-      />
+      <section id="home-hero" data-rail="Intro" className="px-band">
+        <Hero
+          onExploreProducts={() => onNavigate('products')}
+          onExploreTechnology={() => onNavigate('technology')}
+          onNavigateDetail={(detail) => onNavigate(detail)}
+        />
+      </section>
 
-      {/* SIGNAL WITHOUT LIMITS & WHEN IT HAS TO CONNECT */}
-      <div id="signal-section">
+      <section id="signal-section" data-rail="Signal" className="px-band px-band-alt">
         <SectionDecor side="right">
           <SignalSection onNavigateTechnology={() => onNavigate('technology')} />
         </SectionDecor>
-      </div>
+      </section>
 
-      {/* PRODUCTS: 3 Image Cards (Antennas, 5G Routers, Asset Trackers) */}
-      <SectionDecor side="left">
-        <ProductsCatalog
-          onSelectCategory={(catId) => {
-            if (catId === 'routers') {
-              onNavigate('sky5g-router');
-            } else if (catId === 'trackers') {
-              onNavigate('tracker-detail');
-            } else {
-              onNavigate('products');
-            }
-          }}
-        />
-      </SectionDecor>
+      <section id="home-products" data-rail="Products" className="px-band">
+        <SectionDecor side="left">
+          <ProductsCatalog
+            onSelectCategory={(catId) => {
+              if (catId === 'routers') onNavigate('sky5g-router');
+              else if (catId === 'trackers') onNavigate('tracker-detail');
+              else onNavigate('products');
+            }}
+          />
+        </SectionDecor>
+      </section>
 
-      {/* APPLICATIONS: 4 Sector Image Cards (Residential, Logistics, Educational, Industrial) */}
-      <SolutionsSection onSelectApplication={() => onNavigate('services')} />
+      <section id="home-applications" data-rail="Applications" className="px-band px-band-alt">
+        <SolutionsSection onSelectApplication={() => onNavigate('services')} />
+      </section>
 
-      {/* OUR PARTNERS: Online & Distributors with Parallel Auto-moving tracks (pauses on hover) */}
-      <PartnersSection onExploreProducts={() => onNavigate('products')} />
+      <section id="home-partners" data-rail="Partners" className="px-band">
+        <PartnersSection onExploreProducts={() => onNavigate('products')} />
+      </section>
     </div>
   );
 };

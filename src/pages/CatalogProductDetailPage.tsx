@@ -100,7 +100,7 @@ export const CatalogProductDetailPage: React.FC<
   }, []);
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-50/10 pb-24 pt-[72px] text-slate-950">
+    <div className="relative overflow-hidden bg-white pb-24 pt-[72px] text-slate-950">
       {/* Live page background */}
       <div aria-hidden="true" className="pd-page-bg">
         <span /><span /><span />

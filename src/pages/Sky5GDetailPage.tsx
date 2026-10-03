@@ -90,7 +90,7 @@ export const Sky5GDetailPage: React.FC<Sky5GDetailPageProps> = ({
   ];
 
   return (
-    <div className="pt-[72px] pb-24 bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-50/10 text-slate-950 animate-fade-in relative overflow-hidden">
+    <div className="pt-[72px] pb-24 bg-white text-slate-950 animate-fade-in relative overflow-hidden">
       
       {/* Background Floating Orbs */}
       <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none" />

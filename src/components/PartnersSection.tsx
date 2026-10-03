@@ -58,7 +58,7 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({
   return (
     <div className="space-y-16">
       {/* OUR PARTNERS */}
-      <section className="py-20 sm:py-28 bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-50/10 border-t border-slate-200/70 relative">
+      <section className="py-24 sm:py-32 bg-white border-t border-slate-200/70 relative">
         <div className="absolute top-10 left-10 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-3">
@@ -75,7 +75,7 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({
 
           <div className="space-y-6">
             {/* ROW 1: ONLINE PARTNERS */}
-            <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 space-y-5 overflow-hidden group/online shadow-xl">
+            <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 space-y-5 overflow-hidden group/online shadow-sm">
               <div className="flex items-center justify-between">
                 <h3 className="flex items-center gap-2.5 text-xs font-bold uppercase text-slate-800 font-mono tracking-widest">
                   <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
@@ -126,7 +126,7 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({
             </div>
 
             {/* ROW 2: PARTNERS & DISTRIBUTORS */}
-            <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 space-y-5 overflow-hidden group/dist shadow-xl">
+            <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 space-y-5 overflow-hidden group/dist shadow-sm">
               <div className="flex items-center justify-between">
                 <h3 className="flex items-center gap-2.5 text-xs font-bold uppercase text-slate-800 font-mono tracking-widest">
                   <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
@@ -182,7 +182,7 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({
       {/* TAKE A CLOSER LOOK & LAB DEMO VIDEO SECTION (Light Blue Tech Gradient + Grid) */}
       <section
         id="demo-video"
-        className="relative isolate overflow-hidden py-24 sm:py-32 border-t border-blue-200 bg-gradient-to-br from-slate-50 via-sky-50/60 to-blue-100/40"
+        className="relative isolate overflow-hidden py-28 sm:py-36 border-t border-blue-200 bg-gradient-to-br from-slate-50 via-sky-50/60 to-blue-100/40"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(37, 99, 235, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(37, 99, 235, 0.06) 1px, transparent 1px), linear-gradient(to bottom right, #f8fafc, #eff6ff, #dbeafe)",
@@ -240,7 +240,7 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({
       </section>
 
       {/* TAKE A CLOSER LOOK — Product Lineup Grid CTA */}
-      <section className="py-20 sm:py-28 bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-50/10 border-t border-slate-200">
+      <section className="py-24 sm:py-32 bg-white border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 space-y-6">
             <div className="inline-flex items-center px-3 py-1 rounded-md text-[11px] font-mono font-bold uppercase tracking-widest bg-blue-100 text-blue-800 border border-blue-200 shadow-2xs">

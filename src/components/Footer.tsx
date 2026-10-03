@@ -3,9 +3,9 @@ import { Instagram, Linkedin, Youtube } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-100/90 backdrop-blur-xl text-slate-700 border-t border-slate-200/80 transition-colors">
+    <footer className="bg-[#0b1631] text-slate-300 border-t border-white/10 transition-colors">
       {/* Main Top Footer Section matching exact skymirr.com layout */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-14 sm:py-20">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 sm:gap-10">
           {/* Left Block: Logo + Social Media */}
           <div className="space-y-4">
@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
             </a>
 
             <div className="space-y-2">
-              <div className="text-[11px] font-bold uppercase tracking-widest text-slate-500 font-sans">
+              <div className="text-[11px] font-bold uppercase tracking-widest text-slate-400 font-sans">
                 FIND US ON SOCIAL MEDIA
               </div>
 
@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
                   href="https://www.instagram.com/skymirr_inc/"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-9 h-9 rounded-full bg-emerald-800 hover:bg-emerald-700 text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110 active:scale-95"
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-blue-600 text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110 active:scale-95"
                   aria-label="SkyMirr Instagram"
                 >
                   <Instagram className="w-4 h-4" />
@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
                   href="https://www.linkedin.com/company/skymirr/"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-9 h-9 rounded-full bg-emerald-800 hover:bg-emerald-700 text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110 active:scale-95"
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-blue-600 text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110 active:scale-95"
                   aria-label="SkyMirr LinkedIn"
                 >
                   <Linkedin className="w-4 h-4" />
@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
                   href="https://www.youtube.com/@skymirr"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-9 h-9 rounded-full bg-emerald-800 hover:bg-red-600 text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110 active:scale-95"
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-red-600 text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110 active:scale-95"
                   aria-label="SkyMirr YouTube"
                 >
                   <Youtube className="w-4 h-4" />
@@ -62,7 +62,7 @@ export const Footer: React.FC = () => {
                   href="https://twitter.com/skymirr_inc"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-9 h-9 rounded-full bg-emerald-800 hover:bg-black text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110 active:scale-95"
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-black text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110 active:scale-95"
                   aria-label="SkyMirr X"
                 >
                   {/* Custom X Logo icon */}
@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
             <div>
               <a
                 href="tel:321-393-1039"
-                className="text-2xl sm:text-3xl font-extrabold text-emerald-900 hover:text-emerald-700 transition-colors tracking-tight font-sans inline-block hover:scale-[1.02] transform origin-right"
+                className="text-2xl sm:text-3xl font-extrabold text-white hover:text-sky-300 transition-colors tracking-tight font-sans inline-block hover:scale-[1.02] transform origin-right"
               >
                 321-393-1039
               </a>
@@ -86,13 +86,13 @@ export const Footer: React.FC = () => {
             <div>
               <a
                 href="mailto:sales@skymirr.com"
-                className="text-sm sm:text-base font-semibold text-emerald-700 hover:text-emerald-900 transition-colors inline-block"
+                className="text-sm sm:text-base font-semibold text-sky-400 hover:text-sky-300 transition-colors inline-block"
               >
                 sales@skymirr.com
               </a>
             </div>
 
-            <div className="text-xs text-slate-600 leading-snug pt-1 font-normal">
+            <div className="text-xs text-slate-400 leading-snug pt-1 font-normal">
               <p>930 S. Harbor City Blvd</p>
               <p>Suite 403</p>
               <p>Melbourne, FL 32901</p>
@@ -102,7 +102,7 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Grey Copyright Bar matching exact skymirr.com layout */}
-      <div className="bg-emerald-50 text-slate-700 text-xs py-3.5 text-center border-t border-emerald-100 font-sans">
+      <div className="bg-[#070f22] text-slate-400 text-xs py-4 text-center border-t border-white/10 font-sans">
         <p className="font-medium tracking-wide">
           SkyMirr &copy; 2026. All Rights Reserved.
         </p>

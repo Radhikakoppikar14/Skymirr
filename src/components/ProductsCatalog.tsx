@@ -35,21 +35,21 @@ export const ProductsCatalog: React.FC<ProductsCatalogProps> = ({
   return (
     <section
       id="products"
-      className="py-20 sm:py-28 bg-white border-t border-slate-200/70"
+      className="py-24 sm:py-32 bg-[#0b1631]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Centered, widely spaced heading */}
-        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <p className="font-mono text-[11px] font-medium text-blue-600 mb-4">
+        <div className="max-w-none text-left mb-12 sm:mb-16">
+          <p className="font-mono text-[11px] font-medium text-sky-400 mb-4">
             Hardware Engineering
           </p>
           <h2
             className="font-display text-3xl sm:text-4xl lg:text-5xl uppercase"
-            style={{ letterSpacing: "0.38em", color: "#172f73", paddingLeft: "0.38em" }}
+            style={{ letterSpacing: "-0.03em", color: "#ffffff" }}
           >
             Products
           </h2>
-          <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed">
+          <p className="mt-5 text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
             Proprietary antenna-first engineering across three dedicated
             hardware divisions
           </p>
@@ -69,7 +69,7 @@ export const ProductsCatalog: React.FC<ProductsCatalogProps> = ({
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="absolute left-0 bottom-0 w-full h-[146%] max-w-none object-cover object-bottom"
+                  className="absolute left-0 bottom-0 w-full h-[146%] max-w-none object-cover object-bottom origin-bottom transition-transform duration-[900ms] ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-950/20 to-transparent pointer-events-none" />
                 <div className="absolute inset-0 flex items-center justify-center px-4">

@@ -90,7 +90,7 @@ export const Sky5GDetailPage: React.FC<Sky5GDetailPageProps> = ({
   ];
 
   return (
-    <div className="pt-[72px] pb-24 bg-white text-slate-950 animate-fade-in relative overflow-hidden">
+    <div className="pdx-page pt-[72px] pb-24 bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-50/10 text-slate-950 animate-fade-in relative overflow-hidden">
       
       {/* Background Floating Orbs */}
       <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none" />
@@ -116,13 +116,13 @@ export const Sky5GDetailPage: React.FC<Sky5GDetailPageProps> = ({
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative z-10 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative z-10 space-y-12 pdx-flow">
         
         {/* ========================================================
             HERO HEADER & QUICK ACTIONS
             ======================================================== */}
-        <div className="bg-white/90 backdrop-blur-2xl rounded-[32px] p-6 sm:p-10 border border-slate-200/90 shadow-xl space-y-8">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div className="pdx-hero">
+          <div className="pdx-hero-head flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-[11px] font-mono uppercase tracking-[0.25em] text-blue-700 font-bold backdrop-blur-md shadow-2xs">
                 <Sparkles className="w-3.5 h-3.5 text-blue-600 animate-pulse" />
@@ -168,7 +168,7 @@ export const Sky5GDetailPage: React.FC<Sky5GDetailPageProps> = ({
           {/* Hardware Highlight Banner */}
           <div 
             onClick={() => openLightbox("/images/tcpa117/TCPA-117-new.png", "Sky5G TCPA 117 Router")}
-            className="bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-2xl p-6 sm:p-8 border border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-6 cursor-pointer group hover:border-blue-400 transition-all shadow-inner"
+            className="pdx-hero-visual bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-2xl p-6 sm:p-8 border border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-6 cursor-pointer group hover:border-blue-400 transition-all shadow-inner"
           >
             <div className="space-y-2 text-center sm:text-left">
               <span className="text-[10px] font-mono text-blue-700 uppercase font-bold bg-blue-100 px-3 py-1 rounded-full border border-blue-200">

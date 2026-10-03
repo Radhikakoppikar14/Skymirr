@@ -69,3 +69,39 @@ footer { position:relative; } footer::before { content:""; position:absolute; le
 .px-band-alt { background:linear-gradient(180deg,#f3f7fd,rgba(255,255,255,0) 75%); }
 
 @media (prefers-reduced-motion:reduce){ .page-banner h1::after { animation:none } main [class*="aspect-"]::after { display:none } html { scroll-behavior:auto } }
+
+/* ==========================================================================
+   PRODUCT DETAIL PAGES (Sky5G, SkyTracker): full-bleed hero + flat sections
+   ========================================================================== */
+.pdx-page { background:#fff !important; }
+.pdx-page > [class*="blur-["] { display:none; }
+.pdx-flow > * { scroll-margin-top:7rem; }
+
+/* hero: full-bleed navy band, two columns on desktop */
+.pdx-hero { position:relative; isolation:isolate; margin-top:0; padding:5rem 0 !important; border:0 !important; border-radius:0 !important;
+  color:#fff; background:linear-gradient(120deg,#0b1631 0%,#12306f 62%,#1d4fc4 130%) !important; box-shadow:0 0 0 100vmax #0b1631 !important;
+  clip-path:inset(0 -100vmax); overflow:visible !important; backdrop-filter:none !important; display:grid; gap:3rem; }
+.pdx-hero::before { content:""; position:absolute; inset:0 -100vmax; z-index:-1; pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px); background-size:44px 44px;
+  mask-image:linear-gradient(100deg,#000,transparent 75%); -webkit-mask-image:linear-gradient(100deg,#000,transparent 75%); }
+.pdx-hero::after { content:""; position:absolute; right:-4%; top:50%; width:520px; height:520px; translate:0 -50%; z-index:-1; border-radius:50%; pointer-events:none;
+  border:1px solid rgba(255,255,255,.12); box-shadow:0 0 0 70px rgba(255,255,255,.03),0 0 0 150px rgba(255,255,255,.02); }
+@media (min-width:1024px){ .pdx-hero:not(.pdx-hero-solo) { grid-template-columns:1.1fr .9fr; align-items:center; } }
+.pdx-hero h1 { color:#fff !important; font-size:clamp(2.4rem,5vw,4.2rem) !important; line-height:1.04 !important; }
+.pdx-hero h1 ~ p, .pdx-hero p.text-blue-700 { color:#8fb8ff !important; }
+.pdx-hero a[class*="bg-slate-900"] { background:#fff !important; color:#0b1631 !important; }
+.pdx-hero button[class*="bg-slate-100"] { background:rgba(255,255,255,.1) !important; color:#fff !important; border-color:rgba(255,255,255,.28) !important; }
+.pdx-hero [class*="bg-blue-500/10"] { color:#bcd3ff !important; border-color:rgba(255,255,255,.25) !important; background:rgba(255,255,255,.08) !important; }
+.pdx-hero [class*="bg-blue-500/10"] svg { color:#7fb0ff !important; }
+.pdx-hero-head { flex-direction:column !important; align-items:flex-start !important; justify-content:flex-start !important; gap:2rem !important; }
+.pdx-hero-visual { flex-direction:column !important; text-align:center; background:rgba(255,255,255,.07) !important; border-color:rgba(255,255,255,.2) !important; backdrop-filter:blur(6px); }
+.pdx-hero-visual > div:first-child { text-align:center !important; }
+.pdx-hero-visual h3 { color:#fff !important; } .pdx-hero-visual p { color:#c3d3f3 !important; }
+.pdx-hero-visual img { max-height:19rem !important; filter:drop-shadow(0 30px 40px rgba(0,0,0,.45)); }
+.pdx-hero-visual:hover { transform:none !important; }
+
+/* sections below: flat, hairline cards instead of heavy glass + big shadows */
+.pdx-page [class*="shadow-xl"], .pdx-page [class*="shadow-2xl"] { box-shadow:0 1px 2px rgba(11,22,49,.05) !important; }
+.pdx-page [class*="backdrop-blur"]:not(.pdx-hero):not(.pdx-hero-visual):not([role="dialog"]) { backdrop-filter:none; }
+.pdx-flow { padding-top:0 !important; }
+@media (max-width:640px){ .pdx-hero { padding:3.5rem 0 !important; } .pdx-hero::after { display:none; } }

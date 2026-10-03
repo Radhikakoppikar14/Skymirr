@@ -127,7 +127,7 @@ export const SkyTrackerDetailPage: React.FC<SkyTrackerDetailPageProps> = ({
   return (
     <div
       ref={containerRef}
-      className="pt-[72px] pb-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/20 text-slate-950 overflow-x-hidden relative"
+      className="pdx-page pt-[72px] pb-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/20 text-slate-950 overflow-x-hidden relative"
     >
       {/* Vibrant Ambient Glow Orbs */}
       <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-cyan-400/15 blur-[160px] rounded-full pointer-events-none animate-pulse" />
@@ -154,11 +154,11 @@ export const SkyTrackerDetailPage: React.FC<SkyTrackerDetailPageProps> = ({
         </div>
       </div>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 space-y-16 relative z-10">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 space-y-16 relative z-10 pdx-flow">
         {/* ========================================================
             HERO HEADER BANNER WITH QUICK ACTION
             ======================================================== */}
-        <div className="bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-950 rounded-2xl sm:rounded-[36px] p-6 sm:p-12 text-white shadow-2xl relative overflow-hidden border border-blue-400/20">
+        <div className="pdx-hero pdx-hero-solo text-white relative">
           <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/20 blur-[120px] pointer-events-none" />
 
           <div className="space-y-6 relative z-10 max-w-3xl">

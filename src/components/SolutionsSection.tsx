@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowRight, ShieldCheck, CheckCircle2, Home, Truck, GraduationCap, Factory } from "lucide-react";
 
 interface SolutionsSectionProps {
@@ -83,6 +83,16 @@ export const SolutionsSection: React.FC<SolutionsSectionProps> = ({
 
   const current = applications[activeIndex];
 
+  // Warm the browser cache for every sector photo so switching tabs is instant
+  useEffect(() => {
+    applications.forEach((a) => {
+      const img = new Image();
+      img.decoding = "async";
+      img.src = a.image;
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
   return (
     <section
@@ -154,7 +164,10 @@ export const SolutionsSection: React.FC<SolutionsSectionProps> = ({
               key={`main-${current.id}`}
               src={current.image}
               alt={current.title}
-              className="relative z-10 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+              data-no-motion
+              decoding="async"
+              fetchPriority="high"
+              className="animate-fade-in relative z-10 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
             />
             
             {/* Live Animated Radar & Network Overlay */}

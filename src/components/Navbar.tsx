@@ -133,10 +133,10 @@ export const Navbar: React.FC<NavbarProps> = ({
           aria-label="SkyMirr Home"
         >
           <img
-            src={COMPANY_INFO.logo}
-            alt="SkyMirr Technologies"
-            className="sm-brand-img"
-          />
+  src="/images/about/SkyMirr-new-logo-footer.png"
+  alt="SkyMirr Technologies"
+  className="sm-brand-img"
+/>
         </a>
 
         {/* Primary navigation */}

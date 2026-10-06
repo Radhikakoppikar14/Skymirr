@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 /* ==========================================================================
@@ -26,10 +26,10 @@
    ========================================================================== */
 
 @theme {
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-heading: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Sora", sans-serif;
+  --font-display: "Sora", sans-serif;
+  --font-heading: "Sora", sans-serif;
+  --font-mono: "Sora", sans-serif;
 
   --color-ice-white: #f7fbff;
   --color-pure-white: #ffffff;
@@ -153,14 +153,14 @@
     background-color: #f7fbff;
     color: #0b1f3a;
     font-family: var(--font-sans);
-    font-feature-settings: "cv11", "ss01";
     text-rendering: optimizeLegibility;
     min-height: 100vh;
     overflow-x: hidden;
   }
+  .font-mono { font-variant-numeric: tabular-nums; }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
     color: #0b1f3a;
   }
   h1, h2 {

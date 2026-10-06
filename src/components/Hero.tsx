@@ -110,6 +110,8 @@ const SignalField: React.FC<{ reduced: boolean }> = ({ reduced }) => {
 
 export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onNavigateDetail }) => {
   const [slide, setSlide] = useState(0);
+  const [leaving, setLeaving] = useState<number | null>(null);
+  const prevSlide = useRef(0);
   const [news, setNews] = useState(0);
   const [paused, setPaused] = useState(false);
   const reduced = usePrefersReducedMotion();
@@ -119,7 +121,16 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onNavigateDetail 
   const go = (d: number) => setSlide((p) => (p + d + total) % total);
   const goNews = (d: number) => setNews((p) => (p + d + LATEST_NEWS.length) % LATEST_NEWS.length);
 
-  // With motion the active dot's progress bar drives timing; with reduced motion use a timer.
+  // Keep the outgoing slide visible underneath while the new one wipes in.
+  useEffect(() => {
+    if (prevSlide.current === slide) return;
+    setLeaving(prevSlide.current);
+    prevSlide.current = slide;
+    const t = setTimeout(() => setLeaving(null), 1300);
+    return () => clearTimeout(t);
+  }, [slide]);
+
+  // With motion the active segment's progress bar drives timing; with reduced motion use a timer.
   useEffect(() => {
     if (!reduced || paused) return;
     const t = setInterval(() => go(1), 6000);
@@ -146,6 +157,24 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onNavigateDetail 
     if (Math.abs(dx) > 48) go(dx < 0 ? 1 : -1);
   };
 
+  // Subtle 3D tilt + moving light that follows the cursor over the stage.
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (reduced) return;
+    const el = e.currentTarget;
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width;
+    const y = (e.clientY - r.top) / r.height;
+    el.style.setProperty("--rx", `${((0.5 - y) * 3.2).toFixed(2)}deg`);
+    el.style.setProperty("--ry", `${((x - 0.5) * 4.2).toFixed(2)}deg`);
+    el.style.setProperty("--mx", `${(x * 100).toFixed(1)}%`);
+    el.style.setProperty("--my", `${(y * 100).toFixed(1)}%`);
+  };
+  const onLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = e.currentTarget;
+    el.style.setProperty("--rx", "0deg");
+    el.style.setProperty("--ry", "0deg");
+  };
+
   const item = LATEST_NEWS[news] ?? LATEST_NEWS[0];
 
   return (
@@ -157,8 +186,8 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onNavigateDetail 
       </div>
 
       <div className="hy-wrap">
-        {/* News ticker */}
-        <div className="hy-ticker sm-rise">
+        {/* News line */}
+        <div className="hy-strip sm-rise">
           <span className="hy-label">
             <i aria-hidden="true" />
             Latest @ SkyMirr
@@ -179,52 +208,64 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onNavigateDetail 
           </div>
         </div>
 
-        {/* Peek carousel */}
+        {/* Stage + control bar */}
         <div
-          className="hy-carousel sm-rise no-lift"
-          style={{ ["--d" as string]: "140ms" }}
+          className="hy-stage sm-rise no-lift"
+          style={{ ["--d" as string]: "120ms" }}
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
-          onTouchStart={onTouchStart}
-          onTouchEnd={onTouchEnd}
         >
-          <div className="hy-track">
-            {SLIDES.map((s, i) => {
-              const offset = (i - slide + total) % total;
-              const pos = offset === 0 ? "active" : offset === 1 ? "next" : "prev";
-              return (
-                <div
-                  key={s.id}
-                  data-pos={pos}
-                  aria-hidden={pos !== "active"}
-                  onClick={() => open(s.target)}
-                  className="hy-slide"
-                >
-                  <img src={s.image} alt="" aria-hidden="true" className="hy-slide-bg" />
-                  <img src={s.image} alt={s.title} className="hy-slide-img" />
-                </div>
-              );
-            })}
+          <div className="hy-tilt" onMouseMove={onMove} onMouseLeave={onLeave}>
+            <div className="hy-frame" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+              {SLIDES.map((s, i) => {
+                const pos = i === slide ? "active" : i === leaving ? "leaving" : "idle";
+                return (
+                  <div
+                    key={s.id}
+                    data-pos={pos}
+                    role="group"
+                    aria-roledescription="slide"
+                    aria-label={`${i + 1} of ${total}`}
+                    aria-hidden={pos !== "active"}
+                    onClick={() => open(s.target)}
+                    className="hy-slide"
+                  >
+                    <img src={s.image} alt="" aria-hidden="true" className="hy-slide-bg" />
+                    <img src={s.image} alt={s.title} className="hy-slide-img" />
+                  </div>
+                );
+              })}
+              <span className="hy-glare" aria-hidden="true" />
+            </div>
+          </div>
 
-            <div className="hy-pill">
-              <button onClick={() => go(-1)} className="hy-btn" aria-label="Previous Slide">
-                <ChevronLeft />
-              </button>
-              <div className="hy-dots">
+          <div className="hy-bar">
+            <div className="hy-bar-id" aria-hidden="true">
+              <span key={slide} className="hy-big">{String(slide + 1).padStart(2, "0")}</span>
+              <span className="hy-of">/ {String(total).padStart(2, "0")}</span>
+            </div>
+
+            <div key={`t-${slide}`} className="hy-bar-title" aria-live="polite">
+              {SLIDES[slide].title}
+            </div>
+
+            <div className="hy-bar-nav">
+              <div className="hy-segs" role="tablist" aria-label="Slides">
                 {SLIDES.map((s, i) => {
                   const active = slide === i;
                   return (
                     <button
                       key={s.id}
+                      role="tab"
+                      aria-selected={active}
+                      aria-label={`Go to slide ${i + 1}: ${s.title}`}
                       onClick={() => setSlide(i)}
-                      className={`hy-dot ${active ? "is-active" : ""}`}
-                      aria-label={`Go to slide ${i + 1}`}
-                      aria-current={active}
+                      className={`hy-seg ${active ? "is-active" : ""}`}
                     >
                       {active && (
                         <span
                           key={slide}
-                          className="hy-dot-fill"
+                          className="hy-seg-fill"
                           style={{ animationPlayState: paused ? "paused" : "running" }}
                           onAnimationEnd={() => go(1)}
                         />
@@ -233,9 +274,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onNavigateDetail 
                   );
                 })}
               </div>
-              <button onClick={() => go(1)} className="hy-btn" aria-label="Next Slide">
-                <ChevronRight />
-              </button>
+              <div className="hy-ctrl">
+                <button onClick={() => go(-1)} className="hy-btn" aria-label="Previous Slide">
+                  <ChevronLeft />
+                </button>
+                <button onClick={() => go(1)} className="hy-btn" aria-label="Next Slide">
+                  <ChevronRight />
+                </button>
+              </div>
             </div>
           </div>
         </div>

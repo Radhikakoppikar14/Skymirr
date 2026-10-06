@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronRight, ChevronLeft, ArrowRight, ShieldCheck, CheckCircle2, Home, Truck, GraduationCap, Factory } from "lucide-react";
+import { ArrowRight, ShieldCheck, CheckCircle2, Home, Truck, GraduationCap, Factory } from "lucide-react";
 
 interface SolutionsSectionProps {
   onSelectApplication?: (title: string) => void;
@@ -83,8 +83,6 @@ export const SolutionsSection: React.FC<SolutionsSectionProps> = ({
 
   const current = applications[activeIndex];
 
-  const handleNext = () => setActiveIndex((prev) => (prev + 1) % applications.length);
-  const handlePrev = () => setActiveIndex((prev) => (prev - 1 + applications.length) % applications.length);
 
   return (
     <section
@@ -100,7 +98,7 @@ export const SolutionsSection: React.FC<SolutionsSectionProps> = ({
         
         {/* Header & Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#dce8f2] pb-8">
-          <div className="space-y-3 max-w-2xl">
+          <div className="space-y-3 max-w-none">
             <div className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-[0.2em] uppercase text-[#0a68a8]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#0a68a8] animate-ping" />
               04 &middot; Field Implementations
@@ -110,32 +108,9 @@ export const SolutionsSection: React.FC<SolutionsSectionProps> = ({
               Mission-Critical Applications.
             </h2>
 
-            <p className="text-sm sm:text-base text-[#55708a] leading-relaxed font-normal">
+            <p className="text-sm sm:text-base lg:whitespace-nowrap text-[#55708a] leading-relaxed font-normal">
               Turnkey connectivity deployed across residential, supply chain, educational, and industrial infrastructures.
             </p>
-          </div>
-
-          {/* Stepper Controls */}
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-mono font-bold text-[#8aa0b5]">
-              Sector 0{activeIndex + 1} / 0{applications.length}
-            </span>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={handlePrev}
-                className="p-3 rounded-xl border border-[#dce8f2] bg-white hover:bg-[#eaf4fc] hover:border-[#0ea5e0] text-[#0b1f3a] hover:text-[#0a68a8] transition-all cursor-pointer shadow-sm active:scale-95"
-                aria-label="Previous Application"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={handleNext}
-                className="p-3 rounded-xl border border-[#dce8f2] bg-white hover:bg-[#eaf4fc] hover:border-[#0ea5e0] text-[#0b1f3a] hover:text-[#0a68a8] transition-all cursor-pointer shadow-sm active:scale-95"
-                aria-label="Next Application"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
           </div>
         </div>
 
